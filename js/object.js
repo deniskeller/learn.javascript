@@ -118,3 +118,6 @@
 // accumulator.read(); // прибавляет введённое пользователем значение к текущему значению
 
 // console.log('accumulator value', accumulator.value);
+
+// let num = 1.23456;
+// console.log(num.toFixed(3));
