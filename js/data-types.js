@@ -69,3 +69,99 @@
 // }
 
 // console.log(extractCurrencyValue('$120') === 120);
+
+// ---------------------------------------------------------- МАССИВЫ -------------------------------------------
+
+// const styles = ['Джаз', 'Блюз']; // 1
+// console.log('styles: ', styles);
+
+// styles.push('Рок-н-ролл'); // 2
+// console.log('styles: ', styles);
+
+// const stylesMid = Math.round((styles.length - 1) / 2);
+// styles[stylesMid] = 'Классика'; // 3
+// console.log('styles: ', styles);
+
+// styles.shift(0); // 4
+// console.log('styles: ', styles);
+
+// styles.unshift('Рэп', 'Регги'); // 5
+// console.log('styles: ', styles);
+
+// function sumInput() {
+//   let arr = [];
+//   let sum = 0;
+
+//   while (true) {
+//     let value = prompt('Введите число:', '');
+
+//     if (
+//       value === null ||
+//       value === undefined ||
+//       value === '' ||
+//       !isFinite(value)
+//     )
+//       break;
+
+//     arr.push(+value);
+//     console.log('arr: ', arr);
+//   }
+
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//   }
+//   console.log('sum: ', sum);
+//   return sum;
+// }
+
+// console.log(sumInput());
+
+// function getMaxSubSum(arr) {
+//   let newArr = [];
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > 0) {
+//       newArr.push(arr[i]);
+//     }
+//   }
+
+//   for (let i = 0; i < newArr.length; i++) {
+//     sum += newArr[i];
+//   }
+// 	return sum
+// }
+
+// console.log('5', getMaxSubSum([-1, 2, 3, -9]));
+// console.log('6', getMaxSubSum([2, -1, 2, 3, -9]));
+// console.log('11', getMaxSubSum([-1, 2, 3, -9, 11]));
+// console.log('3', getMaxSubSum([-2, -1, 1, 2]));
+// console.log('100', getMaxSubSum([100, -9, 2, -3, 5]));
+// console.log('6', getMaxSubSum([1, 2, 3]));
+
+// function camelize(str) {
+//   const arr = str.split('-');
+//   // console.log('arr: ', arr);
+
+//   const newArr = arr.map((item, index) => {
+//     if (index == 0 || (index == arr.length - 1 && item == '')) return item;
+
+//     return item[0].toUpperCase() + item.slice(1);
+//   });
+//   // console.log('newArr: ', newArr);
+
+//   return newArr.join("");
+// }
+
+// console.log('backgroundColor', camelize('background-color'));
+// console.log('listStyleImage', camelize('list-style-image'));
+// console.log('WebkitTransition', camelize('-webkit-transition'));
+// console.log('backgroundColor', camelize('background-color-'));
+
+function filterRange(arr, a, b) {}
+
+let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 1, 4);
+
+console.log(filtered); // 3,1 (совпадающие значения)
+console.log(arr); // 5,3,8,1 (без изменений)
