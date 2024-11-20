@@ -157,11 +157,212 @@
 // console.log('WebkitTransition', camelize('-webkit-transition'));
 // console.log('backgroundColor', camelize('background-color-'));
 
-function filterRange(arr, a, b) {}
+// function filterRange(arr, a, b) {
+//   let newArr = [];
 
-let arr = [5, 3, 8, 1];
+//   arr.filter((item) => {
+//     if (item >= a && item <= b) {
+//       newArr.push(item);
+//     }
+//   });
+//   console.log('newArr: ', newArr);
+//   return newArr;
+// }
 
-let filtered = filterRange(arr, 1, 4);
+// let arr = [5, 3, 8, 1];
 
-console.log(filtered); // 3,1 (совпадающие значения)
-console.log(arr); // 5,3,8,1 (без изменений)
+// let filtered = filterRange(arr, 1, 4);
+
+// console.log(filtered); // 3,1 (совпадающие значения)
+// console.log(arr); // 5,3,8,1 (без изменений)
+
+// function filterRangeInPlace(arr, a, b) {
+//   // arr.forEach((item, index) => {
+//   //   if (item < a || item > b) {
+//   //     arr.splice(index, 1);
+//   //     arr.forEach((item, index) => {
+//   //       if (item < a || item > b) {
+//   //         arr.splice(index, 1);
+//   //       }
+//   //     });
+//   //   }
+//   // });
+
+//   arr.forEach((item, index) => {
+//     if (item < a || item > b) {
+//       arr.splice(index, 1);
+//       filterRangeInPlace(arr, a, b);
+//     }
+//   });
+// }
+
+// let arr = [-2, 0, 1, 3, 5, 8];
+// // let arr = [5, 3, 8, 1];
+// filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+// console.log(arr); // [3, 1]
+
+// function copySorted(arr) {
+//   return arr.slice().sort();
+// }
+
+// let arr = ['HTML', 'JavaScript', 'CSS'];
+
+// let sorted = copySorted(arr);
+
+// console.log(sorted); // CSS, HTML, JavaScript
+// console.log(arr); // HTML, JavaScript, CSS (без изменений)
+
+// let vasya = { name: 'Вася', age: 25 };
+// let petya = { name: 'Петя', age: 30 };
+// let masha = { name: 'Маша', age: 28 };
+
+// let users = [vasya, petya, masha];
+
+// let names = users.map((item) => item.name);
+// console.log(names);
+
+// let vasya = { name: 'Вася', surname: 'Пупкин', id: 1 };
+// let petya = { name: 'Петя', surname: 'Иванов', id: 2 };
+// let masha = { name: 'Маша', surname: 'Петрова', id: 3 };
+
+// let users = [vasya, petya, masha];
+
+// let usersMapped = users.map((item) => {
+//   let newItem = {
+//     id: item.id,
+//     fullName: item.name + ' ' + item.surname,
+//   };
+//   return newItem;
+// });
+
+// console.log('usersMapped: ', usersMapped);
+
+// console.log(usersMapped[0].id); // 1
+// console.log(usersMapped[0].fullName); // Вася Пупкин
+
+// let vasya = { name: 'Вася', age: 25 };
+// let petya = { name: 'Петя', age: 30 };
+// let masha = { name: 'Маша', age: 29 };
+
+// let arr = [vasya, petya, masha];
+
+// function getAverageAge(arr) {
+//   let averageAge = 0;
+//   arr.forEach((item) => {
+//     averageAge += item.age;
+//   });
+//   console.log('averageAge: ', averageAge);
+
+//   return averageAge / arr.length;
+
+// 	// return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+// }
+
+// console.log(getAverageAge(arr)); // (25 + 30 + 29) / 3 = 28
+
+// function unique(arr) {
+//   let unigArr = [];
+//   arr.forEach((item) => {
+//     if (!unigArr.includes(item)) {
+//       unigArr.push(item);
+//     }
+//   });
+//   console.log('unigArr: ', unigArr);
+//   return unigArr;
+// }
+
+// let strings = [
+//   'кришна',
+//   'кришна',
+//   'харе',
+//   'харе',
+//   'харе',
+//   'харе',
+//   'кришна',
+//   'кришна',
+//   ':-O',
+// ];
+
+// console.log(unique(strings)); // кришна, харе, :-O
+
+// let users = [
+//   { id: 'john', name: 'John Smith', age: 20 },
+//   { id: 'ann', name: 'Ann Smith', age: 24 },
+//   { id: 'pete', name: 'Pete Peterson', age: 31 },
+// ];
+
+// function groupById(arr) {
+//   // let obj = {};
+
+//   // arr.forEach((user) => {
+//   //   obj[user.id] = user;
+//   // });
+//   // console.log('obj: ', obj);
+
+//   // return obj;
+
+//   return arr.reduce((obj, value) => {
+//     obj[value.id] = value;
+//     return obj;
+//   }, {});
+// }
+
+// let usersById = groupById(users);
+// console.log('usersById: ', usersById);
+
+/*
+после вызова у нас должно получиться:
+
+usersById = {
+  john: {id: 'john', name: "John Smith", age: 20},
+  ann: {id: 'ann', name: "Ann Smith", age: 24},
+  pete: {id: 'pete', name: "Pete Peterson", age: 31},
+}
+*/
+
+// function Calculator() {
+//   this.method = {
+//     '+': (a, b) => a + b,
+//     '-': (a, b) => a - b,
+//   };
+
+//   this.calculate = function (str) {
+//     let arr = str.split(' ');
+//     // console.log('arr: ', arr);
+//     let a = +arr[0];
+//     // console.log('a: ', a);
+//     let b = +arr[2];
+//     // console.log('b: ', b);
+//     let operator = arr[1];
+//     // console.log('operator: ', operator);
+
+//     if (!isFinite(a) || !isFinite(b)) {
+//       console.log('Значение/я не являются числами');
+//     }
+
+//     if (!this.method[operator]) {
+//       console.log(`Оператор "${operator}" не поддерживается`);
+//     }
+
+//     return this.method[operator](a, b);
+//   };
+
+//   this.addMethod = function (name, func) {
+//     this.method[name] = func;
+//   };
+// }
+
+// let calc = new Calculator();
+// console.log(calc.calculate('3 + 7')); // 10
+
+// let powerCalc = new Calculator();
+// powerCalc.addMethod('*', (a, b) => a * b);
+// powerCalc.addMethod('/', (a, b) => a / b);
+// powerCalc.addMethod('**', (a, b) => a ** b);
+// console.log('powerCalc: ', powerCalc);
+
+// let result = powerCalc.calculate('2 ** 5');
+// console.log(result); // 8
+// console.log(powerCalc.calculate('2 * 5'));
+// console.log(powerCalc.calculate('8 / 4'));
