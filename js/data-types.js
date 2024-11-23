@@ -366,3 +366,34 @@ usersById = {
 // console.log(result); // 8
 // console.log(powerCalc.calculate('2 * 5'));
 // console.log(powerCalc.calculate('8 / 4'));
+
+// ------------------------------------------------- Map \ Set -------------------------------------------------------
+
+// function unique(arr) {
+//   let set = new Set(arr);
+//   return [...set.values()];
+// }
+
+// let values = [
+//   'Hare',
+//   'Krishna',
+//   'Hare',
+//   'Krishna',
+//   'Krishna',
+//   'Krishna',
+//   'Hare',
+//   'Hare',
+//   ':-O',
+// ];
+
+// console.log(unique(values)); // Hare,Krishna,:-O
+
+// let map = new Map();
+
+// map.set('name', 'John');
+
+// let keys = Array.from(map.keys());
+// console.log('keys: ', keys);
+
+// keys.push('more');
+// console.log('keys: ', keys);
