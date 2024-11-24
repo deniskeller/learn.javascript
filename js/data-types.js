@@ -397,3 +397,68 @@ usersById = {
 
 // keys.push('more');
 // console.log('keys: ', keys);
+
+// let salaries = {
+//   John: 100,
+//   Pete: 300,
+//   Mary: 250,
+// };
+
+// function sumSalaries(obj = {}) {
+//   let sum = 0;
+
+//   Object.values(obj).forEach((item) => {
+//     sum += item;
+//   });
+//   return sum;
+// }
+
+// console.log('null', sumSalaries({}));
+// console.log(sumSalaries(salaries)); // 650
+
+// let user = {
+//   name: 'John',
+//   age: 30,
+// };
+
+// function count(obj) {
+//   return Object.keys(obj).length;
+// }
+
+// console.log(count(user)); // 2
+
+// let [name1, ...name2] = ['Julius', 'Caesar', 'Consul', 'of the Roman Republic'];
+
+// console.log(name1); // Julius
+// console.log(name2); // Caesar
+
+// let user = { name: 'John', years: 30 };
+
+// // ваш код должен быть с левой стороны:
+// // ... = user
+// let { name, years: age, isAdmin = false } = user;
+
+// console.log(name); // John
+// console.log(age); // 30
+// console.log(isAdmin); // false
+
+let salaries = {
+  John: 100,
+  Pete: 300,
+  Mary: 250,
+};
+
+function topSalary(salaries) {
+  let sal = 0;
+
+  if (Object.values(salaries).length === 0) return null;
+
+  Object.entries(salaries).find((item) => {
+    if (item[1] > sal) {
+      sal = item;
+    }
+  });
+  return sal[0];
+}
+
+console.log(topSalary(salaries));
