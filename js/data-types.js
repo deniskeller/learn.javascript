@@ -442,23 +442,41 @@ usersById = {
 // console.log(age); // 30
 // console.log(isAdmin); // false
 
-let salaries = {
-  John: 100,
-  Pete: 300,
-  Mary: 250,
-};
+// let salaries = {
+//   John: 100,
+//   Pete: 300,
+//   Mary: 250,
+// };
 
-function topSalary(salaries) {
-  let sal = 0;
+// function topSalary(salaries) {
+//   let sal = 0;
 
-  if (Object.values(salaries).length === 0) return null;
+//   if (Object.values(salaries).length === 0) return null;
 
-  Object.entries(salaries).find((item) => {
-    if (item[1] > sal) {
-      sal = item;
-    }
-  });
-  return sal[0];
-}
+//   Object.entries(salaries).find((item) => {
+//     if (item[1] > sal) {
+//       sal = item;
+//     }
+//   });
+//   return sal[0];
+// }
 
-console.log(topSalary(salaries));
+// console.log(topSalary(salaries));
+
+// ------------------------------------------------------------------------- Date -------------------------------------------------------------------------
+
+// let date = new Date();
+// console.log('date: ', date.getTimezoneOffset());
+
+// ------------------------------------------------------------------------- JSON -------------------------------------------------------------------------
+
+// let user = {
+//   name: "Василий Иванович",
+//   age: 35
+// };
+
+// let json = JSON.stringify(user);
+
+// console.log(json);
+
+// console.log(JSON.parse(json));
