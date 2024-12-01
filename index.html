@@ -5,9 +5,23 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+
+    <style>
+      .circle {
+        transition-property: width, height;
+        transition-duration: 2s;
+        position: fixed;
+        transform: translateX(-50%) translateY(-50%);
+        background-color: red;
+        border-radius: 50%;
+      }
+    </style>
   </head>
   <body>
+    <!-- <button id="showCircleButton">start animated</button> -->
+
     <div id="app"></div>
+
     <script type="module" src="/main.js"></script>
     <script type="module" src="/js/ifelse.js"></script>
     <script type="module" src="/js/logical-operators.js"></script>
@@ -18,5 +32,7 @@
     <script type="module" src="/js/data-types.js"></script>
     <script type="module" src="/js/function-advanced.js"></script>
     <script type="module" src="/js/prototypes-research.js"></script>
+    <script type="module" src="/js/classes.js"></script>
+    <script type="module" src="/js/promise.js"></script>
   </body>
 </html>
