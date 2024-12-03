@@ -151,3 +151,19 @@
 //   // не забывайте, здесь нельзя использовать "await"
 // }
 // f()
+
+// async function getSomething() {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve('Privet!');
+//     }, 3000);
+//   });
+// }
+
+// // getSomething().then((something) => {
+// //   console.log('something: ', something);
+// // });
+
+
+// const some = await getSomething()
+// console.log('some: ', some);
