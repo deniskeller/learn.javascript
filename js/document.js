@@ -13,13 +13,13 @@
 
 // --------------------------------------------------------------------------- Навигация по DOM-элементам ----------------------------------------------------------------------
 
-let table = document.body.firstElementChild;
-console.log('table: ', table);
+// let table = document.body.firstElementChild;
+// console.log('table: ', table);
 
-let trList = table.children[0].children;
-console.log('trList: ', trList);
+// let trList = table.children[0].children;
+// console.log('trList: ', trList);
 
-Array.from(trList).forEach((tr, index) => {
-  console.log('tr: ', tr.children[index]);
-  tr.children[index].style.backgroundColor = 'red';
-});
+// Array.from(trList).forEach((tr, index) => {
+//   console.log('tr: ', tr.children[index]);
+//   tr.children[index].style.backgroundColor = 'red';
+// });
