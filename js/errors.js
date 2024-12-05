@@ -52,12 +52,12 @@
 // }
 
 
-function* generateSequence() {
-  yield 1;
-  yield 2;
-  return 3;
-}
+// function* generateSequence() {
+//   yield 1;
+//   yield 2;
+//   return 3;
+// }
 
-// "функция-генератор" создаёт объект "генератор"
-let generator = generateSequence();
-console.log(generator);
+// // "функция-генератор" создаёт объект "генератор"
+// let generator = generateSequence();
+// console.log(generator);
