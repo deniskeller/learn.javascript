@@ -23,3 +23,21 @@
 //   console.log('tr: ', tr.children[index]);
 //   tr.children[index].style.backgroundColor = 'red';
 // });
+
+// ------------------------------------------------------------------ Атрибуты и свойства -----------------------------------------------------------------------
+
+// let widgetName = document.querySelector('[data-widget-name]');
+// console.log('widgetName: ', widgetName);
+// console.log('widgetName: ', widgetName.getAttribute("data-widget-name"));
+
+
+let links = document.querySelectorAll('a');
+// console.log('links: ', links);
+for (let link of links) {
+  // console.log('link: ', link);
+  let href = link.getAttribute('href');
+  // console.log('href: ', href);
+  if (href && href.includes('://') && !href.includes('http://internal.com')) {
+    link.style.color = 'orange';
+  }
+}
