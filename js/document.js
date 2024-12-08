@@ -30,14 +30,38 @@
 // console.log('widgetName: ', widgetName);
 // console.log('widgetName: ', widgetName.getAttribute("data-widget-name"));
 
+// let links = document.querySelectorAll('a');
+// // console.log('links: ', links);
+// for (let link of links) {
+//   // console.log('link: ', link);
+//   let href = link.getAttribute('href');
+//   // console.log('href: ', href);
+//   if (href && href.includes('://') && !href.includes('http://internal.com')) {
+//     link.style.color = 'orange';
+//   }
+// }
 
-let links = document.querySelectorAll('a');
-// console.log('links: ', links);
-for (let link of links) {
-  // console.log('link: ', link);
-  let href = link.getAttribute('href');
-  // console.log('href: ', href);
-  if (href && href.includes('://') && !href.includes('http://internal.com')) {
-    link.style.color = 'orange';
-  }
+// ------------------------------------------------------------ Изменение документа ----------------------------------------------------------
+
+// function clear(elems) {
+//   elem.innerHTML = '';
+// }
+
+// let elem = document.querySelector('#elem');
+// // console.log('elem: ', elem);
+// clear(elem);
+// console.log('elem: ', elem);
+
+const ul = document.createElement('ul');
+const app = document.querySelector('#app');
+app.append(ul);
+
+while (true) {
+  let task = prompt('Добавьте задачу', '');
+  console.log('task: ', task);
+  if (!task || task == null || task == undefined) break;
+
+  const li = document.createElement('li');
+  li.innerHTML = task;
+  ul.append(li);
 }
