@@ -109,7 +109,7 @@
 
 // createTree(tree, data);
 
-// Выведите список потомков в дереве
+// Выведите список потомков в дереве ----------
 // const ul = document.querySelector('#ul-tree');
 // // console.log('ul: ', ul);
 
@@ -128,7 +128,7 @@
 //   li.firstChild.data += count;
 // }
 
-// Создайте календарь в виде таблицы
+// Создайте календарь в виде таблицы ---------
 // function createCalendar(elem, year, month) {
 //   let mon = month - 1; // месяцы в JS идут от 0 до 11, а не от 1 до 12
 //   let d = new Date(year, mon);
@@ -180,7 +180,7 @@
 
 // --------------------------------------------------------- Стили и классы -------------------------------------------------------------------
 
-// Создать уведомление
+// Создать уведомление -------
 // function showNotification({ top = 0, right = 0, className, html }) {
 //   const notification = document.createElement('div');
 //   notification.classList.add('notification', className);
@@ -204,3 +204,31 @@
 //     className: 'welcome',
 //   });
 // }, 2000);
+
+// ------------------------------------------------------------------- Размеры и прокрутка элементов ---------------------------------------------------------------------------------
+// const example = document.querySelector('#example');
+// console.log('example: ', example.offsetParent);
+// console.log('example: ', example.offsetWidth);
+// console.log('example: ', example.offsetHeight);
+// console.log('example: ', example.clientWidth);
+// console.log('высота без скрола: ', example.clientHeight);
+// console.log('высота со скролом: ', example.scrollHeight);
+
+// console.log('высота со скролом: ', example.scrollTop);
+// example.style.height = `${example.scrollHeight}px`;
+
+// ------ Найти размер прокрутки снизу
+// function computedScrollToBottom() {
+//   let scrollBottom =
+//     example.scrollHeight - example.clientHeight - example.scrollTop;
+//   console.log('scrollBottom: ', scrollBottom);
+// }
+// computedScrollToBottom();
+
+// example.addEventListener('scroll', () => computedScrollToBottom());
+
+// ------ Узнать ширину полосы прокрутки
+// console.log(example.offsetWidth - example.clientWidth - example.clientLeft - example.clientTop);
+
+// ------ Поместите мяч в центр поля
+
