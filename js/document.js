@@ -251,3 +251,111 @@
 // }
 // computedBallPosition();
 // window.addEventListener('resize', () => console.log("kek"));
+
+// -------------------------------------------------------------------------- Координаты -----------------------------------------------------------------------------------
+// let button = document.getElementById('button');
+
+// function createMessageUnder(elem, html) {
+//   // создаём элемент, который будет содержать сообщение
+//   let message = document.createElement('div');
+//   // для стилей лучше было бы использовать css-класс здесь
+//   message.style.cssText = 'position:fixed; color: red';
+
+//   // устанавливаем координаты элементу, не забываем про "px"!
+//   let coords = elem.getBoundingClientRect();
+
+//   message.style.left = coords.left + 'px';
+//   message.style.top = coords.bottom + 'px';
+
+//   message.innerHTML = html;
+
+//   return message;
+// }
+
+// Использование:
+// добавим сообщение на страницу на 5 секунд
+// let message = createMessageUnder(button, 'Hello, world!');
+// document.body.append(message);
+// setTimeout(() => message.remove(), 5000);
+
+// // получаем координаты элемента в контексте документа
+// function getCoords(elem) {
+//   let box = elem.getBoundingClientRect();
+
+//   return {
+//     top: box.top + window.scrollY,
+//     right: box.right + window.scrollX,
+//     bottom: box.bottom + window.scrollY,
+//     left: box.left + window.scrollX,
+//   };
+// }
+
+// function createMessageUnder(elem, html) {
+//   let message = document.createElement('div');
+//   message.style.cssText = 'position:absolute; color: red';
+
+//   let coords = getCoords(elem);
+//   console.log('coords: ', coords);
+
+//   message.style.left = coords.left + 'px';
+//   message.style.top = coords.bottom + 'px';
+
+//   message.innerHTML = html;
+
+//   return message;
+// }
+
+// ------ Найдите координаты точек относительно окна браузера
+document.onclick = function (e) {
+  // показывает координаты точки клика
+  coords.innerHTML = e.clientX + ':' + e.clientY;
+};
+
+const field = document.querySelector('#field');
+// console.log('field clientWidth: ', field.clientWidth);
+// console.log('field offsetWidth: ', field.offsetWidth);
+// находим отступы сверху и снизу
+const paddingTopBottom = field.offsetWidth - field.clientWidth;
+// console.log('paddingTopBottom: ', paddingTopBottom);
+// находим отступы слева и справа
+const paddingLeftRight = field.offsetHeight - field.clientHeight;
+// console.log('paddingLeftRight: ', paddingLeftRight);
+
+const rect = field.getBoundingClientRect();
+console.log('rect: ', rect);
+
+const topLeftExternalCorner = [Math.round(rect.left), Math.round(rect.top)];
+console.log('верхний левый, внешний угол: ', topLeftExternalCorner);
+
+const bottomRightExternalCorner = [
+  Math.round(rect.right),
+  Math.round(rect.bottom),
+];
+console.log('нижний правый, внешний угол: ', bottomRightExternalCorner);
+
+const topLeftInternalCorner = [
+  Math.round(rect.left) + paddingLeftRight / 2,
+  Math.round(rect.top) + paddingLeftRight / 2,
+];
+console.log('верхний левый, внутренний угол: ', topLeftInternalCorner);
+
+const bottomRightInternalCorner = [
+  Math.round(rect.right) - paddingTopBottom / 2,
+  Math.round(rect.bottom) - paddingTopBottom / 2,
+];
+console.log('нижний правый, внутренний угол: ', bottomRightInternalCorner);
+
+let answer1 = [rect.left, rect.top];
+console.log('answer1: ', answer1);
+
+let answer2 = [rect.right, rect.bottom];
+console.log('answer2: ', answer2);
+
+let answer3 = [rect.left + field.clientLeft, rect.top + field.clientTop];
+console.log('answer3: ', answer3);
+
+let answer4 = [
+  rect.left + field.clientLeft + field.clientWidth,
+  rect.top + field.clientTop + field.clientHeight,
+];
+console.log('answer4: ', answer4);

@@ -7,15 +7,44 @@
     <title>Vite App</title>
 
     <style>
-			* {
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-			}
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      #app {
+        display: flex;
+        justify-content: center;
+				flex-direction: column;
+        align-items: center;
+        height: 100vh;
+      }
+      #field {
+        overflow: hidden;
+        width: 200px;
+        height: 150px;
+        border-top: 10px solid black;
+        border-right: 10px solid gray;
+        border-bottom: 10px solid gray;
+        border-left: 10px solid black;
+        background-color: #00ff00;
+        font: 10px/1.2 monospace;
+      }
     </style>
   </head>
   <body>
     <div id="app">
+      <div id="coords">(координаты покажутся здесь)</div>
+
+      <div id="field">
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . .
+      </div>
     </div>
 
     <script type="module" src="/main.js"></script>
