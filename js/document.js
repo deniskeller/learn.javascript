@@ -231,4 +231,23 @@
 // console.log(example.offsetWidth - example.clientWidth - example.clientLeft - example.clientTop);
 
 // ------ Поместите мяч в центр поля
+// const field = document.querySelector('#field');
+// console.log('field: ', field);
+// const fieldWidth = field.clientWidth;
+// const fieldHeight = field.clientHeight;
+// console.log('field ширина: ', fieldWidth);
+// console.log('field высота: ', fieldHeight);
 
+// const ball = document.querySelector('#ball');
+// console.log('ball: ', ball);
+// const ballWidth = ball.clientWidth;
+// const ballHeight = ball.clientHeight;
+// console.log('ball ширина: ', ballWidth);
+// console.log('ball высота: ', ballHeight);
+
+// function computedBallPosition() {
+//   ball.style.top = fieldHeight / 2 - ballHeight / 2 + 'px';
+//   ball.style.left = fieldWidth / 2 - ballWidth / 2 + 'px';
+// }
+// computedBallPosition();
+// window.addEventListener('resize', () => console.log("kek"));
