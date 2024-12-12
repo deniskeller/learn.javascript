@@ -306,56 +306,97 @@
 // }
 
 // ------ Найдите координаты точек относительно окна браузера
-document.onclick = function (e) {
-  // показывает координаты точки клика
-  coords.innerHTML = e.clientX + ':' + e.clientY;
-};
+// document.onclick = function (e) {
+//   // показывает координаты точки клика
+//   coords.innerHTML = e.clientX + ':' + e.clientY;
+// };
 
-const field = document.querySelector('#field');
-// console.log('field clientWidth: ', field.clientWidth);
-// console.log('field offsetWidth: ', field.offsetWidth);
-// находим отступы сверху и снизу
-const paddingTopBottom = field.offsetWidth - field.clientWidth;
-// console.log('paddingTopBottom: ', paddingTopBottom);
-// находим отступы слева и справа
-const paddingLeftRight = field.offsetHeight - field.clientHeight;
-// console.log('paddingLeftRight: ', paddingLeftRight);
+// const field = document.querySelector('#field');
+// // console.log('field clientWidth: ', field.clientWidth);
+// // console.log('field offsetWidth: ', field.offsetWidth);
+// // находим отступы сверху и снизу
+// const paddingTopBottom = field.offsetWidth - field.clientWidth;
+// // console.log('paddingTopBottom: ', paddingTopBottom);
+// // находим отступы слева и справа
+// const paddingLeftRight = field.offsetHeight - field.clientHeight;
+// // console.log('paddingLeftRight: ', paddingLeftRight);
 
-const rect = field.getBoundingClientRect();
-console.log('rect: ', rect);
+// const rect = field.getBoundingClientRect();
+// console.log('rect: ', rect);
 
-const topLeftExternalCorner = [Math.round(rect.left), Math.round(rect.top)];
-console.log('верхний левый, внешний угол: ', topLeftExternalCorner);
+// const topLeftExternalCorner = [Math.round(rect.left), Math.round(rect.top)];
+// console.log('верхний левый, внешний угол: ', topLeftExternalCorner);
 
-const bottomRightExternalCorner = [
-  Math.round(rect.right),
-  Math.round(rect.bottom),
-];
-console.log('нижний правый, внешний угол: ', bottomRightExternalCorner);
+// const bottomRightExternalCorner = [
+//   Math.round(rect.right),
+//   Math.round(rect.bottom),
+// ];
+// console.log('нижний правый, внешний угол: ', bottomRightExternalCorner);
 
-const topLeftInternalCorner = [
-  Math.round(rect.left) + paddingLeftRight / 2,
-  Math.round(rect.top) + paddingLeftRight / 2,
-];
-console.log('верхний левый, внутренний угол: ', topLeftInternalCorner);
+// const topLeftInternalCorner = [
+//   Math.round(rect.left) + paddingLeftRight / 2,
+//   Math.round(rect.top) + paddingLeftRight / 2,
+// ];
+// console.log('верхний левый, внутренний угол: ', topLeftInternalCorner);
 
-const bottomRightInternalCorner = [
-  Math.round(rect.right) - paddingTopBottom / 2,
-  Math.round(rect.bottom) - paddingTopBottom / 2,
-];
-console.log('нижний правый, внутренний угол: ', bottomRightInternalCorner);
+// const bottomRightInternalCorner = [
+//   Math.round(rect.right) - paddingTopBottom / 2,
+//   Math.round(rect.bottom) - paddingTopBottom / 2,
+// ];
+// console.log('нижний правый, внутренний угол: ', bottomRightInternalCorner);
 
-let answer1 = [rect.left, rect.top];
-console.log('answer1: ', answer1);
+// let answer1 = [rect.left, rect.top];
+// console.log('answer1: ', answer1);
 
-let answer2 = [rect.right, rect.bottom];
-console.log('answer2: ', answer2);
+// let answer2 = [rect.right, rect.bottom];
+// console.log('answer2: ', answer2);
 
-let answer3 = [rect.left + field.clientLeft, rect.top + field.clientTop];
-console.log('answer3: ', answer3);
+// let answer3 = [rect.left + field.clientLeft, rect.top + field.clientTop];
+// console.log('answer3: ', answer3);
 
-let answer4 = [
-  rect.left + field.clientLeft + field.clientWidth,
-  rect.top + field.clientTop + field.clientHeight,
-];
-console.log('answer4: ', answer4);
+// let answer4 = [
+//   rect.left + field.clientLeft + field.clientWidth,
+//   rect.top + field.clientTop + field.clientHeight,
+// ];
+// console.log('answer4: ', answer4);
+
+// ------ Покажите заметку рядом с элементом
+// function positionAt(anchor, position, elem) {
+//   // console.log('position: ', position);
+//   // console.log('anchor: ', anchor);
+//   // console.log('elem: ', elem);
+//   const anchorRect = anchor.getBoundingClientRect();
+//   const elemRect = elem.getBoundingClientRect();
+//   // console.log('anchorRect: ', anchorRect);
+
+//   if (position == 'top') {
+//     elem.style.left = anchorRect.left + 'px';
+//     elem.style.top = anchorRect.top - elemRect.height + 'px';
+//   }
+//   if (position == 'bottom') {
+//     elem.style.left = anchorRect.left + 'px';
+//     elem.style.top = anchorRect.bottom + 'px';
+//   }
+//   if (position == 'right') {
+//     elem.style.left = anchorRect.right + 'px';
+//     elem.style.top = anchorRect.top + 'px';
+//   }
+// }
+
+// function showNote(anchor, position, html) {
+//   let note = document.createElement('div');
+//   note.className = 'note';
+//   note.innerHTML = html;
+//   document.body.append(note);
+
+//   positionAt(anchor, position, note);
+// }
+
+// // test it
+// let blockquote = document.querySelector('blockquote');
+
+// showNote(blockquote, 'top', 'note above');
+// showNote(blockquote, 'bottom', 'note below');
+// showNote(blockquote, 'right', 'note at the right');
+
+// ------ Расположите заметку внутри элемента (абсолютное позиционирование)
