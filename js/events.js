@@ -46,3 +46,24 @@
 // });
 
 // ------ Создать раскрывающееся меню
+// const menu = document.querySelector('.menu');
+// menu.querySelector('.title').addEventListener('click', () => {
+//   menu.classList.toggle('open');
+// });
+
+// ------ Добавить кнопку закрытия
+// const panes = document.querySelectorAll('.pane');
+// console.log('panes: ', panes);
+
+// for (let pane of panes) {
+//   console.log('pane: ', pane);
+//   pane.innerHTML += '<button class="remove-button">[x]</button>';
+// }
+// const btns = document.querySelectorAll('.remove-button');
+// console.log('btns: ', btns);
+// for (let btn of btns) {
+//   btn.addEventListener('click', (e) => {
+//     console.log('e.target: ', e);
+//     e.target.parentNode.remove();
+//   });
+// }
