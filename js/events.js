@@ -71,53 +71,76 @@
 // ------ Карусель
 // отметить картинки для удобства разработки
 // этот код может быть удалён по вашему усмотрению
-let i = 1;
-for (let li of document.querySelectorAll('li')) {
-  li.style.position = 'relative';
-  li.insertAdjacentHTML(
-    'beforeend',
-    `<span style="position:absolute;left:0;top:0">${i}</span>`
-  );
-  i++;
+{
+  /* <div class="carousel">
+      <button class="carousel__button carousel__button--prev">⇦</button>
+
+      <div class="carousel__gallery">
+        <ul>
+          <li><img src="https://ru.js.cx/carousel/1.png" /></li>
+          <li><img src="https://ru.js.cx/carousel/2.png" /></li>
+          <li><img src="https://ru.js.cx/carousel/3.png" /></li>
+          <li><img src="https://ru.js.cx/carousel/4.png" /></li>
+          <li><img src="https://ru.js.cx/carousel/5.png" /></li>
+          <li><img src="https://ru.js.cx/carousel/6.png" /></li>
+          <li><img src="https://ru.js.cx/carousel/7.png" /></li>
+          <li><img src="https://ru.js.cx/carousel/8.png" /></li>
+          <li><img src="https://ru.js.cx/carousel/9.png" /></li>
+          <li><img src="https://ru.js.cx/carousel/10.png" /></li>
+        </ul>
+      </div>
+
+      <button class="carousel__button carousel__button--next">⇨</button>
+    </div>  */
 }
 
-const carousel = document.querySelector('.carousel');
-const carouselSlider = carousel.querySelector('ul');
-const slide = carousel.querySelectorAll('li');
-const btnPrev = carousel.querySelector('.carousel__button--prev');
-const btnNext = carousel.querySelector('.carousel__button--next');
-const showSlides = 3;
-const sizeSlide = 200;
-let currentSlide = 0;
+// let i = 1;
+// for (let li of document.querySelectorAll('li')) {
+//   li.style.position = 'relative';
+//   li.insertAdjacentHTML(
+//     'beforeend',
+//     `<span style="position:absolute;left:0;top:0">${i}</span>`
+//   );
+//   i++;
+// }
 
-const slideLength = slide.length;
-let rest = slideLength - showSlides;
-console.log('rest: ', rest);
-console.log('max: ', slide.length * sizeSlide - showSlides * sizeSlide);
+// const carousel = document.querySelector('.carousel');
+// const carouselSlider = carousel.querySelector('ul');
+// const slide = carousel.querySelectorAll('li');
+// const btnPrev = carousel.querySelector('.carousel__button--prev');
+// const btnNext = carousel.querySelector('.carousel__button--next');
+// const showSlides = 3;
+// const sizeSlide = 200;
+// let currentSlide = 0;
 
-btnPrev.addEventListener('click', () => {
-	currentSlide += sizeSlide * showSlides;
-	currentSlide = Math.min(currentSlide, 0)
-  // if (currentSlide < 0) {
-  // }
-  console.log('currentSlide: ', currentSlide);
-  carouselSlider.style.transform = `translateX(${currentSlide}px)`;
-});
+// const slideLength = slide.length;
+// let rest = slideLength - showSlides;
+// console.log('rest: ', rest);
+// console.log('max: ', slide.length * sizeSlide - showSlides * sizeSlide);
 
-btnNext.addEventListener('click', () => {
-  currentSlide -= sizeSlide * showSlides;
-  currentSlide = Math.max(
-    currentSlide,
-    -sizeSlide * (slideLength - showSlides)
-  );
-  // if (currentSlide > -sizeSlide * (slide.length - showSlides)) {
-  // }
+// btnPrev.addEventListener('click', () => {
+// 	currentSlide += sizeSlide * showSlides;
+// 	currentSlide = Math.min(currentSlide, 0)
+//   // if (currentSlide < 0) {
+//   // }
+//   console.log('currentSlide: ', currentSlide);
+//   carouselSlider.style.transform = `translateX(${currentSlide}px)`;
+// });
 
-  // const remainder = slideLength % showSlides;
-  // console.log('remainder: ', remainder);
-  console.log('currentSlide: ', currentSlide);
-  carouselSlider.style.transform = `translateX(${currentSlide}px)`;
-});
+// btnNext.addEventListener('click', () => {
+//   currentSlide -= sizeSlide * showSlides;
+//   currentSlide = Math.max(
+//     currentSlide,
+//     -sizeSlide * (slideLength - showSlides)
+//   );
+//   // if (currentSlide > -sizeSlide * (slide.length - showSlides)) {
+//   // }
+
+//   // const remainder = slideLength % showSlides;
+//   // console.log('remainder: ', remainder);
+//   console.log('currentSlide: ', currentSlide);
+//   carouselSlider.style.transform = `translateX(${currentSlide}px)`;
+// });
 
 // const carousel = document.querySelector('.carousel');
 // const carouselSlider = carousel.querySelector('ul');
