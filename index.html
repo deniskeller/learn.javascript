@@ -18,31 +18,22 @@
         align-items: center;
         min-height: 100vh;
         padding: 100px;
-        /* justify-content: center; */
-        height: 2000px;
+        /* justify-content: center;
+        height: 2000px; */
       }
       /* стили задачи */
-      #field {
-        width: 500px;
-        height: 450px;
-        border: 10px solid black;
-        background-color: #00ff00;
-        overflow: hidden;
-				position: relative;
-      }
-      #ball {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: all 0.5s ease;
-      }
     </style>
   </head>
   <body>
     <!-- <div id="app"></div> -->
 
-    <div id="field">
-      <img src="https://ru.js.cx/clipart/ball.svg" id="ball" />
+    <div class="menu">
+      <span class="title">Сладости (нажми меня)!</span>
+      <ul>
+        <li>Пирожное</li>
+        <li>Пончик</li>
+        <li>Мёд</li>
+      </ul>
     </div>
 
     <script type="module" src="/main.js"></script>
