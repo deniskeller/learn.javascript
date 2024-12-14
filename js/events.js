@@ -201,3 +201,37 @@
 //       updateCarousel();
 //     }
 //   });
+
+// ---------------------------------------------------------------------- Делегирование событий -------------------------------------------------------------------
+// let table = document.getElementById('bagua-table');
+
+// let selectedTd;
+
+// table.onclick = function (event) {
+//   let td = event.target.closest('td'); // (1)
+
+//   if (!td) return; // (2)
+
+//   if (!table.contains(td)) return; // (3)
+
+//   highlight(td); // (4)
+// };
+
+// function highlight(node) {
+//   if (selectedTd) {
+//     selectedTd.classList.remove('highlight');
+//   }
+//   selectedTd = node;
+//   selectedTd.classList.add('highlight');
+// }
+
+// ------ Спрячьте сообщения с помощью делегирования
+const container = document.querySelector('#container');
+console.log('container: ', container);
+const removeButtons = document.querySelectorAll('.remove-button');
+console.log('removeButtons: ', removeButtons);
+
+container.addEventListener('click', function (e) {
+  if (e.target.classList.contains('remove-button'))
+    e.target.parentNode.remove();
+});
