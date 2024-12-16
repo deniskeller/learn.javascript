@@ -226,12 +226,75 @@
 // }
 
 // ------ Спрячьте сообщения с помощью делегирования
-const container = document.querySelector('#container');
-console.log('container: ', container);
-const removeButtons = document.querySelectorAll('.remove-button');
-console.log('removeButtons: ', removeButtons);
+// const container = document.querySelector('#container');
+// console.log('container: ', container);
+// const removeButtons = document.querySelectorAll('.remove-button');
+// console.log('removeButtons: ', removeButtons);
 
-container.addEventListener('click', function (e) {
-  if (e.target.classList.contains('remove-button'))
-    e.target.parentNode.remove();
-});
+// container.addEventListener('click', function (e) {
+//   if (e.target.classList.contains('remove-button'))
+//     e.target.parentNode.remove();
+// });
+
+// ------ Раскрывающееся дерево
+{
+  /* <ul class="tree" id="tree">
+  <li>
+    Животные
+    <ul>
+      <li>
+        Млекопитающие
+        <ul>
+          <li>Коровы</li>
+          <li>Ослы</li>
+          <li>Собаки</li>
+          <li>Тигры</li>
+        </ul>
+      </li>
+      <li>
+        Другие
+        <ul>
+          <li>Змеи</li>
+          <li>Птицы</li>
+          <li>Ящерицы</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Рыбы
+    <ul>
+      <li>
+        Аквариумные
+        <ul>
+          <li>Гуппи</li>
+          <li>Скалярии</li>
+        </ul>
+      </li>
+      <li>
+        Морские
+        <ul>
+          <li>Морская форель</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>;
+
+const tree = document.querySelector('#tree');
+const itemList = tree.querySelectorAll('li');
+
+for (let li of itemList) {
+  const span = document.createElement('span');
+  li.prepend(span);
+  span.append(span.nextSibling);
+}
+
+tree.addEventListener('click', function (e) {
+  const target = e.target;
+  console.log('target: ', target);
+  if (target.tagName === 'SPAN' && target.nextSibling) {
+    target.nextSibling.hidden = !target.nextSibling.hidden;
+  }
+}); */
+}
