@@ -237,64 +237,96 @@
 // });
 
 // ------ Раскрывающееся дерево
-{
-  /* <ul class="tree" id="tree">
-  <li>
-    Животные
-    <ul>
-      <li>
-        Млекопитающие
-        <ul>
-          <li>Коровы</li>
-          <li>Ослы</li>
-          <li>Собаки</li>
-          <li>Тигры</li>
-        </ul>
-      </li>
-      <li>
-        Другие
-        <ul>
-          <li>Змеи</li>
-          <li>Птицы</li>
-          <li>Ящерицы</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>
-    Рыбы
-    <ul>
-      <li>
-        Аквариумные
-        <ul>
-          <li>Гуппи</li>
-          <li>Скалярии</li>
-        </ul>
-      </li>
-      <li>
-        Морские
-        <ul>
-          <li>Морская форель</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>;
+// {
+//   <ul class="tree" id="tree">
+//     <li>
+//       Животные
+//       <ul>
+//         <li>
+//           Млекопитающие
+//           <ul>
+//             <li>Коровы</li>
+//             <li>Ослы</li>
+//             <li>Собаки</li>
+//             <li>Тигры</li>
+//           </ul>
+//         </li>
+//         <li>
+//           Другие
+//           <ul>
+//             <li>Змеи</li>
+//             <li>Птицы</li>
+//             <li>Ящерицы</li>
+//           </ul>
+//         </li>
+//       </ul>
+//     </li>
+//     <li>
+//       Рыбы
+//       <ul>
+//         <li>
+//           Аквариумные
+//           <ul>
+//             <li>Гуппи</li>
+//             <li>Скалярии</li>
+//           </ul>
+//         </li>
+//         <li>
+//           Морские
+//           <ul>
+//             <li>Морская форель</li>
+//           </ul>
+//         </li>
+//       </ul>
+//     </li>
+//   </ul>;
 
-const tree = document.querySelector('#tree');
-const itemList = tree.querySelectorAll('li');
+//   const tree = document.querySelector('#tree');
+//   const itemList = tree.querySelectorAll('li');
 
-for (let li of itemList) {
-  const span = document.createElement('span');
-  li.prepend(span);
-  span.append(span.nextSibling);
-}
+//   for (let li of itemList) {
+//     const span = document.createElement('span');
+//     li.prepend(span);
+//     span.append(span.nextSibling);
+//   }
 
-tree.addEventListener('click', function (e) {
-  const target = e.target;
-  console.log('target: ', target);
-  if (target.tagName === 'SPAN' && target.nextSibling) {
-    target.nextSibling.hidden = !target.nextSibling.hidden;
-  }
-}); */
-}
+//   tree.addEventListener('click', function (e) {
+//     const target = e.target;
+//     console.log('target: ', target);
+//     if (target.tagName === 'SPAN' && target.nextSibling) {
+//       target.nextSibling.hidden = !target.nextSibling.hidden;
+//     }
+//   });
+// }
+
+// ------ Сортируемая таблица
+const table = document.querySelector('#table');
+const thList = table.querySelectorAll('th');
+
+thList.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    const type = item.getAttribute('data-type');
+    sortTable(index, type);
+  });
+});
+
+const sortTable = (index, type) => {
+  const tbody = table.querySelector('tbody');
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  console.log('rows: ', rows);
+
+  const sortedRows = rows.sort((a, b) => {
+    const aText = a.children[index].textContent;
+    const bText = b.children[index].textContent;
+
+    if (type === 'number') {
+      return Number(aText) - Number(bText);
+    }
+    if (type === 'string') {
+      return aText > bText ? 1 : -1;
+    }
+  });
+
+  tbody.innerHTML = '';
+  sortedRows.forEach((row) => tbody.appendChild(row));
+};
