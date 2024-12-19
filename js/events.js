@@ -300,6 +300,38 @@
 // }
 
 // ------ Сортируемая таблица
+
+/* <table id="table">
+  <thead>
+    <tr>
+      <th data-type="number">Возраст</th>
+      <th data-type="string">Имя</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>5</td>
+      <td>Вася</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Петя</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Женя</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Маша</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Илья</td>
+    </tr>
+  </tbody>
+</table>;
+
 const table = document.querySelector('#table');
 const thList = table.querySelectorAll('th');
 
@@ -329,4 +361,38 @@ const sortTable = (index, type) => {
 
   tbody.innerHTML = '';
   sortedRows.forEach((row) => tbody.appendChild(row));
-};
+}; */
+
+// ------ Поведение "подсказка"
+
+let tooltip = document.createElement('div');
+
+document.addEventListener('mouseover', (e) => {
+  const target = e.target;
+  if (!target.dataset.tooltip) return;
+
+  tooltip.className = 'tooltip';
+  document.body.appendChild(tooltip);
+
+  const tooltipContent = target.getAttribute('data-tooltip');
+  tooltip.innerHTML = tooltipContent;
+  tooltip.style.display = 'block';
+
+  const targetRect = target.getBoundingClientRect();
+
+  // Проверяем, выходят ли подсказки за границы экрана
+  let left = targetRect.left + (target.offsetWidth - tooltip.offsetWidth) / 2;
+  if (left < 0) left = 5;
+
+  let top = targetRect.top - tooltip.offsetHeight - 5;
+  if (top < 0) top = targetRect.top + target.offsetHeight + 5;
+
+  tooltip.style.left = left + 'px';
+  tooltip.style.top = top + 'px';
+});
+
+document.addEventListener('mouseout', (e) => {
+  const target = e.target;
+  if (!target.dataset.tooltip) return;
+  tooltip.style.display = 'none';
+});
