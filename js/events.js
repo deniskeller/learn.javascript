@@ -364,35 +364,62 @@ const sortTable = (index, type) => {
 }; */
 
 // ------ Поведение "подсказка"
+// .tooltip {
+// 	position: fixed;
+// 	padding: 10px 20px;
+// 	border: 1px solid #b3c9ce;
+// 	border-radius: 4px;
+// 	text-align: center;
+// 	font: italic 14px/1.3 sans-serif;
+// 	color: #333;
+// 	background: #fff;
+// 	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+// 	display: none;
+// }
 
-let tooltip = document.createElement('div');
+{
+  /* <p>ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя</p>
+    <p>ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя ЛяЛяЛя</p>
 
-document.addEventListener('mouseover', (e) => {
-  const target = e.target;
-  if (!target.dataset.tooltip) return;
+    <button data-tooltip="эта подсказка должна быть длиннее, чем элемент">
+      Короткая кнопка
+    </button>
+    <button data-tooltip="HTML<br>подсказка">Ещё кнопка</button>
 
-  tooltip.className = 'tooltip';
-  document.body.appendChild(tooltip);
+    <p>
+      Прокрутите страницу, чтобы кнопки оказались у верхнего края, а затем
+      проверьте правильно ли выводятся подсказки.
+    </p> */
+}
 
-  const tooltipContent = target.getAttribute('data-tooltip');
-  tooltip.innerHTML = tooltipContent;
-  tooltip.style.display = 'block';
+// let tooltip = document.createElement('div');
 
-  const targetRect = target.getBoundingClientRect();
+// document.addEventListener('mouseover', (e) => {
+//   const target = e.target;
+//   if (!target.dataset.tooltip) return;
 
-  // Проверяем, выходят ли подсказки за границы экрана
-  let left = targetRect.left + (target.offsetWidth - tooltip.offsetWidth) / 2;
-  if (left < 0) left = 5;
+//   tooltip.className = 'tooltip';
+//   document.body.appendChild(tooltip);
 
-  let top = targetRect.top - tooltip.offsetHeight - 5;
-  if (top < 0) top = targetRect.top + target.offsetHeight + 5;
+//   const tooltipContent = target.getAttribute('data-tooltip');
+//   tooltip.innerHTML = tooltipContent;
+//   tooltip.style.display = 'block';
 
-  tooltip.style.left = left + 'px';
-  tooltip.style.top = top + 'px';
-});
+//   const targetRect = target.getBoundingClientRect();
 
-document.addEventListener('mouseout', (e) => {
-  const target = e.target;
-  if (!target.dataset.tooltip) return;
-  tooltip.style.display = 'none';
-});
+//   // Проверяем, выходят ли подсказки за границы экрана
+//   let left = targetRect.left + (target.offsetWidth - tooltip.offsetWidth) / 2;
+//   if (left < 0) left = 5;
+
+//   let top = targetRect.top - tooltip.offsetHeight - 5;
+//   if (top < 0) top = targetRect.top + target.offsetHeight + 5;
+
+//   tooltip.style.left = left + 'px';
+//   tooltip.style.top = top + 'px';
+// });
+
+// document.addEventListener('mouseout', (e) => {
+//   const target = e.target;
+//   if (!target.dataset.tooltip) return;
+//   tooltip.style.display = 'none';
+// });
