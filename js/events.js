@@ -425,16 +425,33 @@ const sortTable = (index, type) => {
 // });
 
 // -------------------------------------------------------------------- Действия браузера по умолчанию --------------------------------------------------------------------------
-const contents = document.querySelector('#contents');
-const links = contents.querySelectorAll('a');
 
-contents.addEventListener('click', (e) => {
-  const target = e.target.closest('a');
-  const href = target?.getAttribute('href');
+// ------ Поймайте переход по ссылке
+// #contents {
+// 	padding: 5px;
+// 	border: 1px green solid;
+// }
 
-  if (target) {
-    const checkConfirm = confirm(`Уверены, что хотите перейти на ${href}`);
+// <fieldset id="contents">
+// 	<legend>#contents</legend>
+// 	<p>
+// 		Как насчёт того, чтобы прочитать
+// 		<a href="https://wikipedia.org">Википедию</a> или посетить
+// 		<a href="https://w3.org"><i>W3.org</i></a> и узнать о современных
+// 		стандартах?
+// 	</p>
+// </fieldset>
 
-    if (!checkConfirm) e.preventDefault();
-  }
-});
+// const contents = document.querySelector('#contents');
+// const links = contents.querySelectorAll('a');
+
+// contents.addEventListener('click', (e) => {
+//   const target = e.target.closest('a');
+//   const href = target?.getAttribute('href');
+
+//   if (target) {
+//     const checkConfirm = confirm(`Уверены, что хотите перейти на ${href}`);
+
+//     if (!checkConfirm) e.preventDefault();
+//   }
+// });
