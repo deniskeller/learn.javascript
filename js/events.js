@@ -423,3 +423,18 @@ const sortTable = (index, type) => {
 //   if (!target.dataset.tooltip) return;
 //   tooltip.style.display = 'none';
 // });
+
+// -------------------------------------------------------------------- Действия браузера по умолчанию --------------------------------------------------------------------------
+const contents = document.querySelector('#contents');
+const links = contents.querySelectorAll('a');
+
+contents.addEventListener('click', (e) => {
+  const target = e.target.closest('a');
+  const href = target?.getAttribute('href');
+
+  if (target) {
+    const checkConfirm = confirm(`Уверены, что хотите перейти на ${href}`);
+
+    if (!checkConfirm) e.preventDefault();
+  }
+});

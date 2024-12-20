@@ -13,22 +13,33 @@
         padding: 0; */
       }
       body {
+        min-height: 100vh;
+        padding: 100px;
         /* display: flex; */
         /* flex-direction: column; */
         /* align-items: center; */
-        min-height: 100vh;
-        padding: 100px;
         /* justify-content: center; */
         height: 2000px;
       }
       /* стили задачи */
-      
+      #contents {
+        padding: 5px;
+        border: 1px green solid;
+      }
     </style>
   </head>
   <body>
     <!-- <div id="app"></div> -->
 
-    
+    <fieldset id="contents">
+      <legend>#contents</legend>
+      <p>
+        Как насчёт того, чтобы прочитать
+        <a href="https://wikipedia.org">Википедию</a> или посетить
+        <a href="https://w3.org"><i>W3.org</i></a> и узнать о современных
+        стандартах?
+      </p>
+    </fieldset>
 
     <script type="module" src="/main.js"></script>
     <script type="module" src="/js/ifelse.js"></script>
