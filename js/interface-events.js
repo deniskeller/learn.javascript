@@ -7,6 +7,24 @@
 // });
 
 // ------ Выделяемый список
+{
+  /* <ul id="ul">
+  <li>Кристофер Робин</li>
+  <li>Винни Пух</li>
+  <li>Тигра</li>
+  <li>Кенга</li>
+  <li>Кролик. Просто Кролик.</li>
+</ul>;
+
+
+.selected {
+	background: #0f0;
+}
+
+li {
+	cursor: pointer;
+}
+
 const list = document.querySelectorAll('#ul li');
 
 list.forEach((li) => {
@@ -20,4 +38,5 @@ list.forEach((li) => {
       li.classList.add('selected');
     }
   });
-});
+}); */
+}
