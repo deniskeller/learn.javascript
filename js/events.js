@@ -532,3 +532,4 @@ const sortTable = (index, type) => {
 //   if (target) e.preventDefault();
 //   largeImg.src = href;
 // });
+
