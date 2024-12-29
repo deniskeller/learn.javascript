@@ -40,3 +40,22 @@ list.forEach((li) => {
   });
 }); */
 }
+
+// ----------------------------------------------------------------------- Прокрутка -------------------------------------------------------------------------
+// Бесконечная страница
+console.log('window.scrollY: ', window.scrollY);
+console.log('window.innerHeight: ', window.innerHeight);
+console.log('document.body.offsetHeight: ', document.body.offsetHeight);
+
+function infinityScroll() {
+  console.log('window.scrollY: ', window.scrollY);
+  console.log('window.innerHeight: ', window.innerHeight);
+  console.log('document.body.offsetHeight: ', document.body.offsetHeight);
+
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    const p = document.createElement('p');
+    p.innerHTML = new Date();
+    app.append(p);
+  }
+}
+window.addEventListener('scroll', infinityScroll);
