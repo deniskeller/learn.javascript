@@ -43,19 +43,58 @@ list.forEach((li) => {
 
 // ----------------------------------------------------------------------- Прокрутка -------------------------------------------------------------------------
 // Бесконечная страница
-console.log('window.scrollY: ', window.scrollY);
-console.log('window.innerHeight: ', window.innerHeight);
-console.log('document.body.offsetHeight: ', document.body.offsetHeight);
+// console.log('window.scrollY: ', window.scrollY);
+// console.log('window.innerHeight: ', window.innerHeight);
+// console.log('document.body.offsetHeight: ', document.body.offsetHeight);
 
-function infinityScroll() {
-  console.log('window.scrollY: ', window.scrollY);
-  console.log('window.innerHeight: ', window.innerHeight);
-  console.log('document.body.offsetHeight: ', document.body.offsetHeight);
+// function infinityScroll() {
+//   console.log('window.scrollY: ', window.scrollY);
+//   console.log('window.innerHeight: ', window.innerHeight);
+//   console.log('document.body.offsetHeight: ', document.body.offsetHeight);
 
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    const p = document.createElement('p');
-    p.innerHTML = new Date();
-    app.append(p);
-  }
-}
-window.addEventListener('scroll', infinityScroll);
+//   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+//     const p = document.createElement('p');
+//     p.innerHTML = new Date();
+//     app.append(p);
+//   }
+// }
+// window.addEventListener('scroll', infinityScroll);
+
+// ------ Кнопка вверх/вниз
+// #app {
+// 	width: 400px;
+// 	margin: auto;
+// 	overflow: auto;
+// 	text-align: justify;
+// 	scroll-behavior: smooth;
+// }
+
+// #arrowTop {
+// 	height: 9px;
+// 	width: 14px;
+// 	color: green;
+// 	position: fixed;
+// 	top: 10px;
+// 	left: 10px;
+// 	cursor: pointer;
+// 	display: none;
+// }
+
+// #arrowTop::before {
+// 	content: '▲';
+// }
+// function showBtnScrollTop() {
+//   arrowTop.style.display = 'none';
+//   if (window.scrollY >= window.innerHeight) {
+//     arrowTop.style.display = 'block';
+//   }
+// }
+
+// function scrollToTop() {
+//   window.scroll(0, 0);
+// }
+
+// showBtnScrollTop();
+// window.addEventListener('scroll', showBtnScrollTop);
+// const arrowTop = document.querySelector('#arrowTop');
+// arrowTop.addEventListener('click', scrollToTop);
