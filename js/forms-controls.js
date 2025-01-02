@@ -69,56 +69,156 @@
 // });
 
 // ------ Редактирование TD по клику
-const table = document.querySelector('#bagua-table');
-let editable = null;
+// th {
+// 	text-align: center;
+// 	font-weight: bold;
+// }
+// td {
+// 	width: 150px;
+// 	white-space: nowrap;
+// 	text-align: center;
+// 	vertical-align: middle;
+// 	padding: 10px;
+// }
+// .nw {
+// 	background-color: #999;
+// }
+// .n {
+// 	background-color: #03f;
+// 	color: #fff;
+// }
+// .ne {
+// 	background-color: #ff6;
+// }
+// .w {
+// 	background-color: #ff0;
+// }
+// .c {
+// 	background-color: #60c;
+// 	color: #fff;
+// }
+// .e {
+// 	background-color: #09f;
+// 	color: #fff;
+// }
+// .sw {
+// 	background-color: #963;
+// 	color: #fff;
+// }
+// .s {
+// 	background-color: #f60;
+// 	color: #fff;
+// }
+// .se {
+// 	background-color: #0c3;
+// 	color: #fff;
+// }
+// .td-edit {
+// 	padding: 0;
+// 	position: relative;
+// }
+// .textarea-edit {
+// 	border: none;
+// 	margin: 0;
+// 	padding: 0;
+// 	display: block;
+// 	resize: none;
+// 	outline: none;
+// 	overflow: auto;
+// }
+// button {
+// 	position: absolute;
+// 	z-index: 10;
+// 	left: 0;
+// }
+// <table id="bagua-table">
+//       <tr>
+//         <th colspan="3">
+//           Квадрат <em>Bagua</em>: Направление, Элемент, Цвет, Значение
+//         </th>
+//       </tr>
+//       <tr>
+//         <td class="nw">
+//           <strong>Северо-Запад</strong> <br />Металл <br />Серебро
+//           <br />Старейшины
+//         </td>
+//         <td class="n">
+//           <strong>Север</strong> <br />Вода <br />Синий <br />Перемены
+//         </td>
+//         <td class="ne">
+//           <strong>Северо-Восток</strong> <br />Земля <br />Жёлтый
+//           <br />Направление
+//         </td>
+//       </tr>
+//       <tr>
+//         <td class="w">
+//           <strong>Запад</strong> <br />Металл <br />Золото <br />Молодость
+//         </td>
+//         <td class="c">
+//           <strong>Центр</strong> <br />Всё <br />Пурпурный <br />Гармония
+//         </td>
+//         <td class="e">
+//           <strong>Восток</strong> <br />Дерево <br />Синий <br />Будущее
+//         </td>
+//       </tr>
+//       <tr>
+//         <td class="sw">
+//           <strong>Юго-Запад</strong> <br />Земля <br />Коричневый
+//           <br />Спокойствие
+//         </td>
+//         <td class="s">
+//           <strong>Юг</strong> <br />Огонь <br />Оранжевый <br />Слава
+//         </td>
+//         <td class="se">
+//           <strong>Юго-Восток</strong> <br />Дерево <br />Зеленый <br />Роман
+//         </td>
+//       </tr>
+//     </table>
 
-table.addEventListener('click', (e) => {
-  // let target = e.target;
-  // console.log('target: ', target);
-  // проверяем что кликнули на ячейку таблицы
-  let target = e.target.closest('td');
-  // console.log('target: ', target);
-
-  if (!table.contains(target) || editable) return;
-
-  // сохраняем данные из ячейки
-  let dataTd = target.innerHTML;
-  // console.log('dataTd: ', dataTd);
-
-  // создаем текстарею
-  const textarea = document.createElement('textarea');
-  textarea.classList.add('textarea-edit');
-  textarea.style.width = target.clientWidth + 'px';
-  textarea.style.height = target.clientHeight + 'px';
-  target.classList.add('td-edit');
-  target.innerHTML = '';
-  target.append(textarea);
-  textarea.value = dataTd;
-  textarea.focus();
-  editable = true;
-
-  // создаем кнопки
-  const saveChangeButton = document.createElement('button');
-  saveChangeButton.textContent = 'OK';
-  const cancelChangeButton = document.createElement('button');
-  cancelChangeButton.textContent = 'CANCEL';
-  target.append(saveChangeButton);
-  saveChangeButton.style.bottom =
-    -saveChangeButton.getBoundingClientRect().height + 'px';
-  target.append(cancelChangeButton);
-  cancelChangeButton.style.left =
-    saveChangeButton.getBoundingClientRect().width + 'px';
-
-  saveChangeButton.addEventListener('click', () => {
-    console.log('save');
-    target.innerHTML = textarea.value;
-    target.classList.remove('td-edit');
-    editable = false;
-  });
-  cancelChangeButton.addEventListener('click', () => {
-    console.log('cancel');
-    target.innerHTML = dataTd;
-    target.classList.remove('td-edit');
-    editable = false;
-  });
-});
+// const table = document.querySelector('#bagua-table');
+// let editable = null;
+// table.addEventListener('click', (e) => {
+//   // let target = e.target;
+//   // console.log('target: ', target);
+//   // проверяем что кликнули на ячейку таблицы
+//   let target = e.target.closest('td');
+//   // console.log('target: ', target);
+//   if (!table.contains(target) || editable) return;
+//   // сохраняем данные из ячейки
+//   let dataTd = target.innerHTML;
+//   // console.log('dataTd: ', dataTd);
+//   // создаем текстарею
+//   const textarea = document.createElement('textarea');
+//   textarea.classList.add('textarea-edit');
+//   textarea.style.width = target.clientWidth + 'px';
+//   textarea.style.height = target.clientHeight + 'px';
+//   target.classList.add('td-edit');
+//   target.innerHTML = '';
+//   target.append(textarea);
+//   textarea.value = dataTd;
+//   textarea.focus();
+//   editable = true;
+//   // создаем кнопки
+//   const saveChangeButton = document.createElement('button');
+//   saveChangeButton.textContent = 'OK';
+//   const cancelChangeButton = document.createElement('button');
+//   cancelChangeButton.textContent = 'CANCEL';
+//   target.append(saveChangeButton);
+//   saveChangeButton.style.bottom =
+//     -saveChangeButton.getBoundingClientRect().height + 'px';
+//   target.append(cancelChangeButton);
+//   cancelChangeButton.style.left =
+//     saveChangeButton.getBoundingClientRect().width + 'px';
+//   saveChangeButton.addEventListener('click', () => {
+//     console.log('save');
+//     target.innerHTML = textarea.value;
+//     target.classList.remove('td-edit');
+//     editable = false;
+//   });
+//   cancelChangeButton.addEventListener('click', () => {
+//     console.log('cancel');
+//     target.innerHTML = dataTd;
+//     target.classList.remove('td-edit');
+//     editable = false;
+//   });
+// });
