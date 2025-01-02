@@ -275,3 +275,26 @@ mouse.addEventListener('keydown', (e) => {
   }
 }); */
 }
+
+// ------ Депозитный калькулятор
+let form = document.forms.calculator;
+const moneyBefore = document.querySelector('#money-before');
+const moneyAfter = document.querySelector('#money-after');
+const heightAfter = document.querySelector('#height-after');
+
+moneyBefore.innerHTML = +form.money.value;
+form.money.addEventListener('input', calcResult);
+form.months.addEventListener('change', calcResult);
+form.interest.addEventListener('input', calcResult);
+
+function calcResult() {
+  let initial = +form.money.value;
+  let years = form.months.value / 12;
+  let interest = form.interest.value / 100;
+
+  let result = Math.round(initial * (1 + interest) ** years);
+  // console.log('result: ', result);
+  moneyAfter.innerHTML = result;
+  heightAfter.style.height = result / 100 + 'px';
+}
+calcResult();
