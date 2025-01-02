@@ -67,3 +67,58 @@
 //   view.innerHTML = textarea.value;
 //   textarea.replaceWith(view);
 // });
+
+// ------ Редактирование TD по клику
+const table = document.querySelector('#bagua-table');
+let editable = null;
+
+table.addEventListener('click', (e) => {
+  // let target = e.target;
+  // console.log('target: ', target);
+  // проверяем что кликнули на ячейку таблицы
+  let target = e.target.closest('td');
+  // console.log('target: ', target);
+
+  if (!table.contains(target) || editable) return;
+
+  // сохраняем данные из ячейки
+  let dataTd = target.innerHTML;
+  // console.log('dataTd: ', dataTd);
+
+  // создаем текстарею
+  const textarea = document.createElement('textarea');
+  textarea.classList.add('textarea-edit');
+  textarea.style.width = target.clientWidth + 'px';
+  textarea.style.height = target.clientHeight + 'px';
+  target.classList.add('td-edit');
+  target.innerHTML = '';
+  target.append(textarea);
+  textarea.value = dataTd;
+  textarea.focus();
+  editable = true;
+
+  // создаем кнопки
+  const saveChangeButton = document.createElement('button');
+  saveChangeButton.textContent = 'OK';
+  const cancelChangeButton = document.createElement('button');
+  cancelChangeButton.textContent = 'CANCEL';
+  target.append(saveChangeButton);
+  saveChangeButton.style.bottom =
+    -saveChangeButton.getBoundingClientRect().height + 'px';
+  target.append(cancelChangeButton);
+  cancelChangeButton.style.left =
+    saveChangeButton.getBoundingClientRect().width + 'px';
+
+  saveChangeButton.addEventListener('click', () => {
+    console.log('save');
+    target.innerHTML = textarea.value;
+    target.classList.remove('td-edit');
+    editable = false;
+  });
+  cancelChangeButton.addEventListener('click', () => {
+    console.log('cancel');
+    target.innerHTML = dataTd;
+    target.classList.remove('td-edit');
+    editable = false;
+  });
+});
