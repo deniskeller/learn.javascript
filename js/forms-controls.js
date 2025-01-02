@@ -222,3 +222,56 @@
 //     editable = false;
 //   });
 // });
+
+// ------ Мышь, управляемая клавиатурой
+{
+  /* <pre id="mouse">
+ _   _
+(q\_/p)
+ /. .\
+=\_t_/=   __
+ /   \   (
+((   ))   )
+/\) (/\  /
+\  Y  /-'
+ nn^nn
+</pre>
+
+#mouse {
+	display: inline-block;
+	cursor: pointer;
+	margin: 0;
+}
+#mouse:focus {
+	outline: 1px dashed black;
+}
+
+const mouse = document.querySelector('#mouse');
+mouse.setAttribute('tabindex', 1);
+mouse.style.position = 'fixed';
+mouse.addEventListener('keydown', (e) => {
+  const mouseRect = mouse.getBoundingClientRect();
+  const mouseWeight = mouseRect.width;
+  const mouseHeight = mouseRect.height;
+  const mouseLeft = mouseRect.left;
+  const mouseTop = mouseRect.top;
+  console.log('mouseRect: ', mouseRect);
+
+  switch (e.key) {
+    case 'ArrowUp':
+      mouse.style.top = mouseTop - mouseHeight + 'px';
+      break;
+    case 'ArrowDown':
+      mouse.style.top = mouseTop + mouseHeight + 'px';
+      break;
+    case 'ArrowRight':
+      mouse.style.left = mouseLeft + mouseWeight + 'px';
+      break;
+    case 'ArrowLeft':
+      mouse.style.left = mouseLeft - mouseWeight + 'px';
+      break;
+    default:
+      break;
+  }
+}); */
+}
