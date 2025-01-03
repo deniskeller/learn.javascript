@@ -366,3 +366,94 @@ function calcResult() {
 }
 calcResult(); */
 }
+
+// ---------------------------------------------------------------------------- Отправка формы: событие и метод submit -----------------------------------------------------------------------
+
+// ------ Модальное диалоговое окно с формой
+{
+  /* <dialog id="prompt-form-container">
+	<form id="prompt-form">
+		<div id="prompt-message">Введите что-нибудь... <br />Пожалуйста..</div>
+		<input name="text" type="text" />
+		<input type="submit" value="Ok" />
+		<input type="button" name="cancel" value="Отмена" />
+	</form>
+</dialog>
+
+<button id="show-dialog">Кликните, чтобы увидеть форму</button>
+
+#prompt-form {
+	display: inline-block;
+	padding: 5px 5px 5px 70px;
+	border: 1px solid black;
+	background: white url(https://en.js.cx/clipart/prompt.png) no-repeat
+		left 5px;
+	vertical-align: middle;
+}
+
+#prompt-form-container {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	border: none;
+}
+
+#prompt-form-container::backdrop {
+	background: black;
+	opacity: 0.5;
+}
+
+#prompt-form input[name='text'] {
+	display: block;
+	margin: 5px;
+	width: 180px;
+} */
+}
+
+// const dialog = document.querySelector('#prompt-form-container');
+// const showButton = document.querySelector('#show-dialog');
+
+// function showPrompt(html, callback) {
+//   const form = document.querySelector('#prompt-form');
+//   const message = document.querySelector('#prompt-message');
+//   const textInput = document.querySelector('input[name="text"]');
+//   const cancelButton = document.querySelector('input[name="cancel"]');
+
+//   message.innerHTML = html;
+//   textInput.focus();
+
+//   function dialogClose() {
+//     textInput.value = '';
+//     dialog.close();
+//   }
+
+//   document.onkeydown = function (e) {
+//     if (e.key === 'Escape') {
+//       callback('Вы ввели: ' + null);
+//       dialogClose();
+//     }
+//   };
+
+//   cancelButton.onclick = function () {
+//     callback('Вы ввели: ' + null);
+//     dialogClose();
+//   };
+
+//   form.onsubmit = function (e) {
+//     e.preventDefault();
+//     if (textInput.value !== '') {
+//       callback('Вы ввели: ' + textInput.value);
+//       dialogClose();
+//     }
+//   };
+// }
+
+// showButton.addEventListener('click', () => {
+//   dialog.showModal();
+
+//   showPrompt('Введите что-нибудь<br>...умное:)', function (value) {
+//     alert(value);
+//   });
+// });
