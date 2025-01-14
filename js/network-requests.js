@@ -50,10 +50,3 @@
 
 //   console.log(result.message);
 // };
-
-// --------------------------------------------------------------------- Куки, document.cookie ---------------------------------------------------
-let date = new Date(Date.now() + 86400e3);
-date = date.toUTCString();
-document.cookie = 'user=John33; expires=' + date;
-document.cookie = "user=John33; max-age=0";
-console.log(document.cookie);
