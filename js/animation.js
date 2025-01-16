@@ -42,19 +42,55 @@
 // }
 
 // ------ Анимировать самолёт (CSS)
-const flyjet = document.querySelector('#flyjet');
-const flyjetWidth = flyjet.getBoundingClientRect().width;
-const flyjetHeight = flyjet.getBoundingClientRect().height;
-let isAnimate = false;
 
-flyjet.onclick = function () {
-  flyjet.style.width = flyjetWidth * 10 + 'px';
-  flyjet.style.height = flyjetHeight * 10 + 'px';
+// #flyjet {
+// 	width: 40px;
+// 	/* -> 400px */
 
-  flyjet.addEventListener('transitionend', function (e) {
-    if (!isAnimate) {
-      isAnimate = true;
-      alert('«Анимация закончилась!»');
-    }
-  });
-};
+// 	height: 24px;
+// 	/* -> 240px */
+// 	transition: all 3s ease;
+// }
+
+// <img id="flyjet" src="https://en.js.cx/clipart/flyjet.jpg" />
+
+// const flyjet = document.querySelector('#flyjet');
+// const flyjetWidth = flyjet.getBoundingClientRect().width;
+// const flyjetHeight = flyjet.getBoundingClientRect().height;
+// let isAnimate = false;
+
+// flyjet.onclick = function () {
+//   flyjet.style.width = flyjetWidth * 10 + 'px';
+//   flyjet.style.height = flyjetHeight * 10 + 'px';
+
+//   flyjet.addEventListener('transitionend', function (e) {
+//     if (!isAnimate) {
+//       isAnimate = true;
+//       alert('«Анимация закончилась!»');
+//     }
+//   });
+// };
+
+// ------ Анимированный круг
+// .circle {
+// 	transition-property: width, height;
+// 	transition-duration: 2s;
+// 	position: fixed;
+// 	transform: translateX(-50%) translateY(-50%);
+// 	background-color: red;
+// 	border-radius: 50%;
+// 	width: 0px;
+// 	height: 0px;
+// }
+
+// <button class="button">клик для анимации</button>
+// <div class="circle"></div>
+
+// const circle = document.querySelector('.circle');
+// function showCircle(cx, cy, radius) {
+//   circle.style.left = cx + 'px';
+//   circle.style.top = cy + 'px';
+//   circle.style.width = radius * 2 + 'px';
+//   circle.style.height = radius * 2 + 'px';
+// }
+// document.querySelector('.button').onclick = () => showCircle(250, 250, 100);
