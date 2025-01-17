@@ -42,7 +42,6 @@
 // }
 
 // ------ Анимировать самолёт (CSS)
-
 // #flyjet {
 // 	width: 40px;
 // 	/* -> 400px */
@@ -94,3 +93,21 @@
 //   circle.style.height = radius * 2 + 'px';
 // }
 // document.querySelector('.button').onclick = () => showCircle(250, 250, 100);
+
+// ------ Анимировать самолёт с перелётом (CSS)
+const flyjet = document.querySelector('#flyjet');
+const flyjetWidth = flyjet.getBoundingClientRect().width;
+const flyjetHeight = flyjet.getBoundingClientRect().height;
+let isAnimate = false;
+
+flyjet.onclick = function () {
+  flyjet.style.width = flyjetWidth * 10 + 'px';
+  flyjet.style.height = flyjetHeight * 10 + 'px';
+
+  flyjet.addEventListener('transitionend', function (e) {
+    if (!isAnimate) {
+      isAnimate = true;
+      // alert('«Анимация закончилась!»');
+    }
+  });
+};
