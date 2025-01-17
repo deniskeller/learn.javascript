@@ -95,19 +95,24 @@
 // document.querySelector('.button').onclick = () => showCircle(250, 250, 100);
 
 // ------ Анимировать самолёт с перелётом (CSS)
-const flyjet = document.querySelector('#flyjet');
-const flyjetWidth = flyjet.getBoundingClientRect().width;
-const flyjetHeight = flyjet.getBoundingClientRect().height;
-let isAnimate = false;
+// #flyjet {
+// 	width: 40px;
+// 	height: 24px;
+// 	transition: all 3s cubic-bezier(0, 0, .5, 2);
+// }
+// <img id="flyjet" src="https://en.js.cx/clipart/flyjet.jpg" />
+// const flyjet = document.querySelector('#flyjet');
+// const flyjetWidth = flyjet.getBoundingClientRect().width;
+// const flyjetHeight = flyjet.getBoundingClientRect().height;
+// let isAnimate = false;
 
-flyjet.onclick = function () {
-  flyjet.style.width = flyjetWidth * 10 + 'px';
-  flyjet.style.height = flyjetHeight * 10 + 'px';
+// flyjet.onclick = function () {
+//   flyjet.style.width = flyjetWidth * 10 + 'px';
+//   flyjet.style.height = flyjetHeight * 10 + 'px';
 
-  flyjet.addEventListener('transitionend', function (e) {
-    if (!isAnimate) {
-      isAnimate = true;
-      // alert('«Анимация закончилась!»');
-    }
-  });
-};
+//   flyjet.addEventListener('transitionend', function (e) {
+//     if (!isAnimate) {
+//       isAnimate = true;
+//     }
+//   });
+// };
