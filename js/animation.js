@@ -42,6 +42,7 @@
 // }
 
 // ------ Анимировать самолёт (CSS)
+
 // #flyjet {
 // 	width: 40px;
 // 	/* -> 400px */
@@ -71,6 +72,7 @@
 // };
 
 // ------ Анимированный круг
+
 // .circle {
 // 	transition-property: width, height;
 // 	transition-duration: 2s;
@@ -95,6 +97,7 @@
 // document.querySelector('.button').onclick = () => showCircle(250, 250, 100);
 
 // ------ Анимировать самолёт с перелётом (CSS)
+
 // #flyjet {
 // 	width: 40px;
 // 	height: 24px;
@@ -114,5 +117,48 @@
 //     if (!isAnimate) {
 //       isAnimate = true;
 //     }
+//   });
+// };
+
+// ------ Анимация круга с помощью колбэка
+
+// .circle {
+// 	transition-property: width, height;
+// 	transition-duration: 2s;
+// 	position: fixed;
+// 	transform: translateX(-50%) translateY(-50%);
+// 	background-color: red;
+// 	border-radius: 50%;
+// 	width: 0px;
+// 	height: 0px;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// }
+
+// <button class="button">клик для анимации</button>
+// <div class="circle"></div>
+
+// const circle = document.querySelector('.circle');
+// let isAnimate = false;
+
+// function showCircle(cx, cy, radius, callback) {
+//   circle.style.left = cx + 'px';
+//   circle.style.top = cy + 'px';
+//   circle.style.width = radius * 2 + 'px';
+//   circle.style.height = radius * 2 + 'px';
+
+//   circle.addEventListener('transitionend', function () {
+// 		if (!isAnimate) {
+//       isAnimate = true;
+//       callback(circle);
+//     }
+//   });
+// }
+
+// document.querySelector('.button').onclick = function () {
+//   showCircle(250, 250, 100, (div) => {
+//     div.classList.add('message-ball');
+//     div.append('Hello, world!');
 //   });
 // };
